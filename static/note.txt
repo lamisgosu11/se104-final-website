@@ -1,0 +1,1 @@
+Save static files like css, js, images... in this folder
