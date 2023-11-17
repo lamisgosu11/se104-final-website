@@ -65,3 +65,8 @@ class Notification(models.Model):
 
     def __str__(self):
         return "notifications"
+    
+
+post_delete.connect(Notification.post_delete_handler, sender=Notification)
+post_save.connect(Notification.post_save_handler, sender=Notification)
+pre_save.connect(Notification.pre_save_handler, sender=Notification)
