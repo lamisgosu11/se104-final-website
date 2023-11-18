@@ -14,6 +14,9 @@ class OrderForm(ModelForm):
 		model = Order
 		fields = '_all_'
 
-
+class CreateUserForm(UserCreationForm):
+	class Meta:
+		model = User
+		fields = ['username', 'email', 'password1', 'password2']
 		
 
