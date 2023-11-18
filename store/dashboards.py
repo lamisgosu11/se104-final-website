@@ -199,3 +199,65 @@ class OrderYearSingleLineChart(widgets.SingleLineChart):
             # day_month = '{0}/{1}'.format(*order_day.split('-'))
             values [order_day] = count
         return values
+    
+#tạo biểu đồ tròn để hiển thị số lượng bình luận cho mỗi bài viết
+class PostPieChart(widgets.SinglePieChart):
+    limit_to = 2 #Giới hạn số lượng bài viết và bình luận (comments)
+    title = 'Les Articles Les Plus Commentés' #Tiêu đề của biểu đồ
+    model = Comment #Mô hình dữ liệu là Comment
+    width = widgets.LARGE #Độ rộng của biểu đồ
+
+    #Tạo danh sách nhãn cho các phần trong biểu đồ tròn
+    def labels(self):
+        labels = []
+        for serie in self.series:
+            item = self.values[serie]
+            labels.append(item)
+        return labels
+
+    #Lấy danh sách các bài viết để hiển thị trong chú giải
+    def legend(self):
+        legend= list(Post.objects.values_list('title', flat=True))
+        return legend
+
+    #Lấy danh sách các bài viết để sử dụng trong biểu đồ   
+    def series(self):
+        series= list(Post.objects.values_list('id', flat=True))
+        series = series
+        return series
+
+    #Trả về từ điển số lượng bình luận cho mỗi bài viết
+    def values(self):
+        limit_to = self.limit_to * len(self.legend)
+        queryset = self.get_queryset()
+        queryset = queryset.extra({'post': 'post_id'}).values_list('post_id').alias(count=Count('post_id')).annotate(count=Count('post_id')).order_by('count')[:limit_to]
+        values = defaultdict(lambda: 0)
+        for post, count in queryset:
+            values [post] = count
+        return values
+
+#Hiển thị danh sách địa chỉ vận chuyển và thông tin liên quan
+class UsersList(widgets.ItemList):
+    title = 'Clients et Addresses' #Tiêu đề của danh sách
+    model = ShippingAddress #Mô hình dữ liệu là ShippingAddress
+    queryset = ShippingAddress.objects.all() #Truy vấn cơ sở dữ liệu để lấy danh sách địa chỉ vận chuyển
+    list_display = ['customer','city', 'address'] # Các trường cần hiển thị trong danh sách
+    list_display_links = ['user'] #Các trường liên kết đến chi tiết người dùng
+
+    # Giới hạn itemlist là 30 mục
+    limit_to = 30
+
+    # Đặt chiều cao tối đa của Userlist là 300px và có thể cuộn
+    height = 300
+
+
+#Định nghĩa bảng điều khiển chứa các widgets đã được định nghĩa trước                        
+class MyDashboard(Dashboard):
+    #Thuộc tính widgets: Một tuple chứa các widgets sẽ xuất hiện trên dashboard
+    widgets = (
+        PostPieChart,
+        UsersList,
+        OrderWeekSingleLineChart,
+        OrderMonthSingleLineChart,
+        OrderYearSingleLineChart,
+    )
