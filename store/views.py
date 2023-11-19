@@ -213,3 +213,60 @@ def processOrder(request):
     else:
         print('User is not logged in.. ')
     return JsonResponse('Payment complete !', safe=False)
+
+# Login page view xử lý yêu cầu của người dùng để đăng nhập
+# -> nếu người dùng đã đăng nhập, chuyển hướng người dùng đến trang chủ
+# -> nếu người dùng chưa đăng nhập, kiểm tra yêu cầu của người dùng -> kiểm tra thông tin đăng nhập
+# -> nếu thông tin đăng nhập hợp lệ, kiểm tra yêu cầu có phải là POST hay không? -> POST -> xử lý form đăng nhập
+# -> lấy tên người dùng và mật khẩu từ form -> xác thực -> kiểm tra trùng lặp người dùng -> tồn tại -> đăng nhập -> chuyển hướng người dùng đến trang chủ
+# -> không tồn tại -> thông báo lỗi
+
+
+def loginPage(request):
+    if request.user.is_authenticated:
+        return redirect('home')
+    else:
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+
+            user = authenticate(request, username=username, password=password)
+
+            if user is not None:
+                login(request, user)
+                return redirect('home')
+            else:
+                messages.info(request, 'Username OR password is incorrect')
+
+        context = {}
+        return render(request, 'auth/login.html', context)
+
+# Register page view xử lý yêu cầu của người dùng để đăng ký
+# -> kiểm tra người dùng đã đăng nhập chưa -> nếu rồi thì chuyển về home
+# -> chưa đăng nhập -> tạo form đăng ký -> kiểm tra yêu cầu của người dùng -> kiểm tra form đăng ký
+# trả về trang HTML auth/register.html với form đăng ký
+
+
+def registerPage(request):
+    if request.user.is_authenticated:
+        return redirect('home')
+    else:
+        form = CreateUserForm()
+        if request.method == 'POST':
+            form = CreateUserForm(request.POST)
+            if form.is_valid():
+                form.save()
+                user = form.cleaned_data.get('username')
+                messages.success(request, 'Account was created for ' + user)
+                return redirect('login')
+
+        context = {'form': form}
+        return render(request, 'auth/register.html', context)
+
+# logout page view xử lý yêu cầu của người dùng để đăng xuất
+# nhận đăng xuất -> chuyển hướng người dùng đến trang đăng nhập
+
+
+def logoutUser(request):
+    logout(request)
+    return redirect('login')
