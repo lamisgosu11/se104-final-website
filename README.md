@@ -34,7 +34,7 @@
   <!-- <a href="https://github.com/lamisgosu11/se104-final-website">
     <img src="md-images/logo.png" alt="Logo" width="80" height="80">
   </a> -->
-<h3 align="center">Website bán hàng (update thêm sau) </h3>
+<h3 align="center">Website bán hàng cá nhân (quần áo) </h3>
 
   <p align="center">
     Đây là đồ án cuối kỳ môn SE104 của nhóm 7 tại trường Đại học Công Nghệ Thông Tin (UIT-VNUHCM).
@@ -50,31 +50,15 @@
   </p>
 </div>
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Mục lục</summary>
-  <ol>
-    <li>
-      <a href="#ý-tưởng">Ý tưởng</a>
-      <ul>
-        <li><a href="#công-nghệ-sử-dụng">Công nghệ sử dụng</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#bắt-đầu-sử-dụng">Bắt đầu sử dụng</a>
-      <ul>
-        <li><a href="#yêu-cầu-cài-đặt">Yêu cầu cài đặt</a></li>
-        <li><a href="#cài-đặt-project">Cài Đặt Project</a></li>
-      </ul>
-    </li>
-    <li><a href="#hướng-dẫn-sử-dụng">Hướng dẫn sử dụng</a></li>
-    <!-- <li><a href="#roadmap">Roadmap</a></li> -->
-    <li><a href="#đóng-góp">Đóng góp</a></li>
-    <!-- <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li> -->
-  </ol>
-</details>
+## Table of Contents
+
+- [Ý tưởng](#ý-tưởng)
+  - [Công nghệ sử dụng](#công-nghệ-sử-dụng)
+- [Bắt đầu sử dụng](#bắt-đầu-sử-dụng)
+  - [Yêu cầu cài đặt](#yêu-cầu-cài-đặt)
+  - [Cài Đặt Project](#cài-đặt-project)
+- [Hướng dẫn sử dụng](#hướng-dẫn-sử-dụng)
+- [Thành viên nhóm](#thành-viên-nhóm)
 
 <!-- ABOUT THE PROJECT -->
 
@@ -93,7 +77,8 @@ viết đại cái gì vô đây nè
 <!-- - [![Flutter][flutter]][flutter-url]
 - [![Firebase][firebase]][firebase-url] -->
 
-![Django][Django]![SQLITE][SQLITE]![NGROK][NGROK]![HTML][HTML]![PYTHON][PYTHON]
+![PYTHON][PYTHON]![Django][Django]![SQLITE][SQLITE]![NGROK][NGROK]
+![HTML][HTML]![CSS][CSS]![SCSS][SCSS]![JAVASCRIPT][JAVASCRIPT]
 
 <p align="right">(<a href="#readme-top">Lên đầu trang</a>)</p>
 
@@ -165,7 +150,7 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 4. Push lên branch chính (`git push main feature/AmazingFeature`)
 5. Mở pull request
 
-<p align="right">(<a href="#readme-top">TOP</a>)</p>
+<p align="right">(<a href="#readme-top">Lên đầu trang</a>)</p>
 
 <!-- LICENSE -->
 
@@ -197,7 +182,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 - [Nguyễn Khắc Thắng - 21521431](https://github.com/nkthang2003)
 - [Chu Văn Cường - 21521776](https://github.com/csmcv2)
 - [Trần Phương Lâm - 21521059](https://github.com/Nanpapu)
-- [Lê Tuấn Đạt - 21520699]()
+- [Lê Tuấn Đạt - 21520699](https://github.com/kamdaxay)
 - [Nguyễn Đức Hiển - 20521307](https://github.com/NguyenHien1307)
 - [Đoàn Bảo Long - 21520332](https://github.com/baolongvncom)
 <!-- * [Nguyễn Trần Sang Quang - 21522545](https://github.com/sangquangtryhard) -->
@@ -219,6 +204,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [SQLITE]: https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white
 [NGROK]: https://img.shields.io/badge/Ngrok-1F1E37?style=for-the-badge&logo=ngrok&logoColor=white
 [HTML]: https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white
+[CSS]: https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white
+[SCSS]: https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white
+[JAVASCRIPT]: https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E
 [PYTHON]: https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white
 
 <!-- Nhớ thêm liscense sau -->
