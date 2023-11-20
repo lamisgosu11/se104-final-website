@@ -62,6 +62,7 @@ var csrftoken = getToken('csrftoken');
         </div>
     </div>
     <!-- Offcanvas Menu End -->
+
     <!-- Header Section Begin -->
     <header class="header">
       
@@ -71,3 +72,21 @@ var csrftoken = getToken('csrftoken');
                     <div class="header__logo">
                         <h4> 7 Chọ Store </h4>
                     </div>
+                </div>
+                <div class="col-lg-5 col-md-5">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                            <li><a href="{% url 'store' %}">Store</a></li>
+                            
+                            <li><a href="{% url 'blog' %}">Blog</a></li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                </br>                    
+                    <div class="form-inline my-2 my-lg-0">
+                    {% if user.is_authenticated %}
+                    <span class="hello-msg">{{request.user}}</span>
+                  <pre>  
