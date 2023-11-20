@@ -185,7 +185,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 - [Lê Tuấn Đạt - 21520699](https://github.com/kamdaxay)
 - [Nguyễn Đức Hiển - 20521307](https://github.com/NguyenHien1307)
 - [Đoàn Bảo Long - 21520332](https://github.com/baolongvncom)
-<!-- * [Nguyễn Trần Sang Quang - 21522545](https://github.com/sangquangtryhard) -->
+- [Nguyễn Trần Sang Quang - 21522545](https://github.com/sangquangtryhard) 
 
 [contributors-shield]: https://img.shields.io/github/contributors/lamisgosu11/se104-final-website.svg?style=for-the-badge
 [contributors-url]: https://github.com/lamisgosu11/se104-final-website/graphs/contributors
