@@ -58,10 +58,11 @@ var csrftoken = getToken('csrftoken');
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__text">
-            <p>Free shipping, 30-day return or refund guarantee.</p>
+            <p>Free shipping, 15-day return or refund guarantee.</p>
         </div>
     </div>
     <!-- Offcanvas Menu End -->
+
     <!-- Header Section Begin -->
     <header class="header">
       
@@ -71,3 +72,29 @@ var csrftoken = getToken('csrftoken');
                     <div class="header__logo">
                         <h4> 7 Chọ Store </h4>
                     </div>
+                </div>
+                <div class="col-lg-5 col-md-5">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                            <li><a href="{% url 'store' %}">Store</a></li>
+                            
+                            <li><a href="{% url 'blog' %}">Blog</a></li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                </br>                    
+                    <div class="form-inline my-2 my-lg-0">
+                    {% if user.is_authenticated %}
+                    <span class="hello-msg">{{request.user}}</span>
+                  <pre>  
+    <span><a  class="hello-msg" href="{% url 'logout' %}"> Logout</a></span> </pre>
+                    {% else %}
+                    <a href="{% url 'login' %}" class="btn btn-warning">Login</a>
+                    {% endif %}
+                    <a href="{% url 'cart' %}">
+                     <img  id="cart-icon" src="{% static 'images/cart.png' %}">
+                    </a>
+                     <p id="cart-total">{{cartItems}}</p> 
