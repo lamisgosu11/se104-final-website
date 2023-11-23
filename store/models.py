@@ -96,3 +96,32 @@ class ShippingAddress (models.Model):
 
     def __str__(self):
         return self.address
+
+
+class Post(models.Model):
+    title=models.CharField(max_length=200,null=True)   
+    description=models.CharField(max_length=800,null=True) 
+    slug=models.SlugField(max_length=200,default="")   
+    date_posted = models.DateTimeField(auto_now_add=True)
+    image= models.ImageField(null=True,blank=True)
+
+    def __str__(self):
+        return self.title
+        
+    @property
+    def imageURL(self):
+        try:
+            url=self.image.url
+        except: 
+            url=''
+        return url
+
+class Comment(models.Model):
+    post=models.ForeignKey(Post,related_name="comments",on_delete=models.CASCADE)
+    name=models.CharField(max_length=200)
+    body=models.TextField(max_length=200)
+    date_commented=models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return '%s - %s' % (self.post.title,self.name)
+
