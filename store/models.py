@@ -125,3 +125,9 @@ class Comment(models.Model):
     def __str__(self):
         return '%s - %s' % (self.post.title,self.name)
 
+
+@receiver(post_save, sender=User)
+def create_user_customer(sender, instance, created, **kwargs):
+	print('****', created)
+	if instance.is_staff == False:
+		Customer.objects.get_or_create(user = instance, name = instance.username, email = instance.email)
