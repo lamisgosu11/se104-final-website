@@ -8,8 +8,10 @@ from django.contrib.auth.models import AbstractUser
 from django.dispatch import receiver 
 from django.db.models.signals import post_save
 
+# Class customer is created to extend the User model
+# Attributes user are inherited by the User model
+# Contain the name and email of the user
 class Customer(models.Model):
-    #yaani user aando one customer o customer aando one user
     user = models.OneToOneField(User,on_delete=models.CASCADE, null=True,blank=True, related_name = "customer")
     name=models.CharField(max_length=200,null=True)    
     email=models.CharField(max_length=200,null=True)
@@ -17,6 +19,9 @@ class Customer(models.Model):
     def __str__(self):
         return self.name
 
+# Class Product is created to store the products
+# Attributes name, price, slug, category, digital, image, stock and stock_limit
+# Metod imageURL is to get the image of the product
 class Product(models.Model):
     name=models.CharField(max_length=200,null=True)   
     price=models.DecimalField(max_digits=7,decimal_places=2) 
@@ -39,6 +44,9 @@ class Product(models.Model):
         return url
 
 
+# Class Order is created to store the orders
+# Attributes customer, date_ordered, complete, transaction_id
+# Metods get_cart_total, get_cart_items and shipping are to get the total, the items and the shipping of the order
 class Order(models.Model):
     #a single customer can have multiple orders
     customer = models.ForeignKey(User,on_delete=models.SET_NULL,null=True,blank=True)
@@ -70,6 +78,8 @@ class Order(models.Model):
             if i.product.digital == False:
                 shipping=True
             return shipping
+
+
 
 class OrderItem (models.Model):
     product = models.ForeignKey(Product,on_delete=models.SET_NULL,null=True,blank=True)
