@@ -80,10 +80,11 @@ class Order(models.Model):
             return shipping
 
 
-
+# Class OrderItem is created to detailed the order
+# Attributes product, order, quantity and date_added
+# Metod get_total is to get the total of the order
 class OrderItem (models.Model):
     product = models.ForeignKey(Product,on_delete=models.SET_NULL,null=True,blank=True)
-    #order ynjm ykoun aando barsha orderitems
     order = models.ForeignKey(Order,on_delete=models.SET_NULL,null=True,blank=True)
     quantity = models.IntegerField(default=0,null=True,blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
@@ -94,6 +95,9 @@ class OrderItem (models.Model):
         return total
 
 
+
+# Class ShippingAddress is created to store the shipping address
+# Attributes customer, order, name, address, city, state, zipcode and date_added
 class ShippingAddress (models.Model):
     customer = models.ForeignKey(User,on_delete=models.SET_NULL,null=True,blank=True, related_name='addresse')
     order = models.ForeignKey(Order,on_delete=models.SET_NULL,null=True,blank=True)
@@ -108,6 +112,8 @@ class ShippingAddress (models.Model):
         return self.address
 
 
+# Class post use to store the post in the blog
+# Attributes title, description, slug, date_posted and image
 class Post(models.Model):
     title=models.CharField(max_length=200,null=True)   
     description=models.CharField(max_length=800,null=True) 
@@ -126,6 +132,9 @@ class Post(models.Model):
             url=''
         return url
 
+
+# Class Comment is created to store the comments in the blog
+# Attributes post, name, body and date_commented
 class Comment(models.Model):
     post=models.ForeignKey(Post,related_name="comments",on_delete=models.CASCADE)
     name=models.CharField(max_length=200)
@@ -136,6 +145,8 @@ class Comment(models.Model):
         return '%s - %s' % (self.post.title,self.name)
 
 
+# Func create_user_customer is created to create a customer when a user is created
+# It is called when a user is created and create an instance of customer
 @receiver(post_save, sender=User)
 def create_user_customer(sender, instance, created, **kwargs):
 	print('****', created)
