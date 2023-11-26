@@ -125,3 +125,15 @@
                         <li data-filter=".new-arrivals">New Arrivals</li>
                         <li data-filter=".hot-sales">Hot Sales</li>
                     </ul>
+                </div>
+            </div>
+            <div class="row product__filter">
+                    {% for product in products %}
+                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="{{product.imageURL}}">
+                            <ul class="product__hover">
+                                <li><a href="#"><img src="{% static 'images/home/icon/heart.png' %}" alt=""></a></li>
+                                <li><a href="#"><img src="{% static 'images/home/icon/compare.png' %}" alt=""> <span>Compare</span></a></li>
+                                <li><a href="#"><img src="{% static 'images/home/icon/search.png' %}" alt=""></a></li>
+                            </ul>
