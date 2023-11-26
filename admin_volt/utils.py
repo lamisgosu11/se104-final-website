@@ -40,7 +40,10 @@ default_apps_icon = {
     'auth': 'fa fa-users'
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 83eefd59f67ee10e99ca622bfd74c06a306dd4ee
 class JsonResponse(HttpResponse):
     """
     An HTTP response class that consumes data to be serialized to JSON.
@@ -160,7 +163,10 @@ def get_admin_site(context):
 def get_admin_site_name(context):
     return get_admin_site(context).name
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 83eefd59f67ee10e99ca622bfd74c06a306dd4ee
 class SuccessMessageMixin(object):
     """
     Adds a success message on successful form submission.
@@ -207,8 +213,12 @@ def get_model_queryset(admin_site, model, request, preserved_filters=None):
         queryset = model.objects
 
     list_display = model_admin.get_list_display(request)
+<<<<<<< HEAD
     list_display_links = model_admin.get_list_display_links(
         request, list_display)
+=======
+    list_display_links = model_admin.get_list_display_links(request, list_display)
+>>>>>>> 83eefd59f67ee10e99ca622bfd74c06a306dd4ee
     list_filter = model_admin.get_list_filter(request)
     search_fields = model_admin.get_search_fields(request) \
         if hasattr(model_admin, 'get_search_fields') else model_admin.search_fields
@@ -252,8 +262,12 @@ def get_possible_language_codes():
     # making dialect part uppercase
     split = language_code.split('-', 2)
     if len(split) == 2:
+<<<<<<< HEAD
         language_code = '%s-%s' % (split[0].lower(), split[1].upper()
                                    ) if split[0] != split[1] else split[0]
+=======
+        language_code = '%s-%s' % (split[0].lower(), split[1].upper()) if split[0] != split[1] else split[0]
+>>>>>>> 83eefd59f67ee10e99ca622bfd74c06a306dd4ee
 
     language_codes.append(language_code)
 
@@ -314,8 +328,12 @@ def get_menu_item_url(url, original_app_list):
 def get_menu_items(context):
     # pinned_apps = PinnedApplication.objects.filter(user=context['user'].pk).values_list('app_label', flat=True)
     pinned_apps = []
+<<<<<<< HEAD
     original_app_list = OrderedDict(
         map(lambda app: (app['app_label'], app), get_original_menu_items(context)))
+=======
+    original_app_list = OrderedDict(map(lambda app: (app['app_label'], app), get_original_menu_items(context)))
+>>>>>>> 83eefd59f67ee10e99ca622bfd74c06a306dd4ee
     custom_app_list = None
     custom_app_list_deprecated = None
 
@@ -356,8 +374,12 @@ def get_menu_items(context):
                 item['url_blank'] = data['url_blank']
 
             if 'permissions' in data:
+<<<<<<< HEAD
                 item['has_perms'] = item.get(
                     'has_perms', True) and context['user'].has_perms(data['permissions'])
+=======
+                item['has_perms'] = item.get('has_perms', True) and context['user'].has_perms(data['permissions'])
+>>>>>>> 83eefd59f67ee10e99ca622bfd74c06a306dd4ee
 
             return item
 
@@ -366,10 +388,15 @@ def get_menu_items(context):
 
             if not app_label:
                 if 'label' not in data:
+<<<<<<< HEAD
                     raise Exception(
                         'Custom menu items should at least have \'label\' or \'app_label\' key')
                 app_label = 'custom_%s' % slugify(
                     data['label'], allow_unicode=True)
+=======
+                    raise Exception('Custom menu items should at least have \'label\' or \'app_label\' key')
+                app_label = 'custom_%s' % slugify(data['label'], allow_unicode=True)
+>>>>>>> 83eefd59f67ee10e99ca622bfd74c06a306dd4ee
 
             if app_label in original_app_list:
                 item = original_app_list[app_label].copy()
@@ -380,8 +407,12 @@ def get_menu_items(context):
                 item['label'] = data['label']
 
             if 'items' in data:
+<<<<<<< HEAD
                 item['items'] = list(
                     map(lambda x: get_menu_item_app_model(app_label, x), data['items']))
+=======
+                item['items'] = list(map(lambda x: get_menu_item_app_model(app_label, x), data['items']))
+>>>>>>> 83eefd59f67ee10e99ca622bfd74c06a306dd4ee
 
             if 'url' in data:
                 item['url'] = get_menu_item_url(data['url'], original_app_list)
@@ -390,8 +421,12 @@ def get_menu_items(context):
                 item['url_blank'] = data['url_blank']
 
             if 'permissions' in data:
+<<<<<<< HEAD
                 item['has_perms'] = item.get(
                     'has_perms', True) and context['user'].has_perms(data['permissions'])
+=======
+                item['has_perms'] = item.get('has_perms', True) and context['user'].has_perms(data['permissions'])
+>>>>>>> 83eefd59f67ee10e99ca622bfd74c06a306dd4ee
 
             item['pinned'] = item['app_label'] in pinned_apps
 
@@ -420,8 +455,12 @@ def get_menu_items(context):
 
         if isinstance(custom_app_list_deprecated, dict):
             admin_site = get_admin_site(context)
+<<<<<<< HEAD
             custom_app_list_deprecated = custom_app_list_deprecated.get(
                 admin_site.name, [])
+=======
+            custom_app_list_deprecated = custom_app_list_deprecated.get(admin_site.name, [])
+>>>>>>> 83eefd59f67ee10e99ca622bfd74c06a306dd4ee
 
         for item in custom_app_list_deprecated:
             app_label, models = item
