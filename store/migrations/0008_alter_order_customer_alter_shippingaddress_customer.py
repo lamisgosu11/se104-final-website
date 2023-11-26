@@ -4,7 +4,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('store', '0007_alter_order_customer_alter_shippingaddress_customer.py'),
+        ('store', '0007_alter_order_customer_alter_shippingaddress_customer'),
     ]
 
     operations = [
