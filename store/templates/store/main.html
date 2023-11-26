@@ -2,7 +2,7 @@
 {% load static %}
 <html>
 <head>
-	<title>Home page - 7 Chọ</title>
+	<title>Home page - T7shop</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
 
@@ -58,7 +58,7 @@ var csrftoken = getToken('csrftoken');
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__text">
-            <p>Free shipping, 15-day return or refund guarantee.</p>
+            <p>Free shipping, 30-day return or refund guarantee.</p>
         </div>
     </div>
     <!-- Offcanvas Menu End -->
@@ -70,15 +70,14 @@ var csrftoken = getToken('csrftoken');
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
-                        <h4> 7 Chọ Store </h4>
+                        <h4> T7shop </h4>
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-5">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li class="active"><a href="{% url 'home' %}">Home</a></li>
-                            <li><a href="{% url 'store' %}">Store</a></li>
-                            
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li><a href="{% url 'store' %}">Store</a></li>it 
                             <li><a href="{% url 'blog' %}">Blog</a></li>
                             <li><a href="{% url 'contact' %}">Contact</a></li>
                         </ul>
@@ -97,4 +96,86 @@ var csrftoken = getToken('csrftoken');
                     <a href="{% url 'cart' %}">
                      <img  id="cart-icon" src="{% static 'images/cart.png' %}">
                     </a>
-                     <p id="cart-total">{{cartItems}}</p> 
+                    {% if cartItems != 0 %}
+                        <p id="cart-total">{{cartItems}}</p>
+                    {% endif %}
+
+                    </div>
+                </div>
+              </div>
+          </div>
+          
+ 
+  
+     </div>
+     
+      
+              </header>
+ 
+   <div>
+          <br>
+          {% block content %}
+
+
+           {% endblock content %}
+   </div>
+
+  <!-- Footer Section Begin -->
+  <footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="footer__about">
+                    <div class="footer__logo">
+                      <h3> T7shop </h3>
+                    </div>
+                    <p>The customer is at the heart of our unique business model, which includes design.</p>
+                    <a href="#"><img src="{% static 'images/home/payment.png'%}" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                <div class="footer__widget">
+                    <h6>Shopping</h6>
+                    <ul>
+                        <li><a href="#">Clothing Store</a></li>
+                        <li><a href="#">Trending Shoes</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Sale</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-6">
+                <div class="footer__widget">
+                    <h6>Shopping</h6>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Payment Methods</a></li>
+                        <li><a href="#">Delivery</a></li>
+                        <li><a href="#">Return & Exchanges</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+                <div class="footer__widget">
+                    <h6>NewLetter</h6>
+                    <div class="footer__newslatter">
+                        <p>Be the first to know about new arrivals, look books, sales & promos!</p>
+                        <form action="#">
+                            <input type="text" placeholder="Your email">
+                              <button type="submit"><span class="icon_mail_alt"></span></button>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+      </div>
+    </footer>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
+</body>
+</html>

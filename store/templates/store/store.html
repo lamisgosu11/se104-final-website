@@ -1,0 +1,40 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="{% static 'css/tiny-slider.css' %}" rel="stylesheet">
+ </head> 
+ <body>  
+    <div class="product-section">
+        <div class="row">
+    {% for product in products %}
+        
+    <div class="col-12 col-md-4 col-lg-3 mb-5">
+        <div class="product-item" href="#">
+                <img src="{{product.imageURL}}" class="img-fluid product-thumbnail">
+            
+            <h3 class="product-title">{{product.name}}</h3>
+            <strong class="product-price">${{product.price|floatformat:2}}</strong>
+            <br>
+            <a href="{% url 'product' product.slug %}" class="btn btn-outline-secondary"> Voir </a>
+            </button>
+            <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart ">Add to Cart</button>
+
+            <span class="icon-cross">
+                <img src="{% static 'images/cross.svg' %}" class="img-fluid">
+            </span>
+        </div>
+    </div> 
+
+    {% endfor %}
+</div>
+</div>
+<script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/tiny-slider.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+</body> 
+{% endblock content %}
