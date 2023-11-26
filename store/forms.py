@@ -12,7 +12,7 @@ from .models import Order
 class OrderForm(ModelForm):
 	class Meta:
 		model = Order
-		fields = '_all_'
+		fields = '__all__'
 
 class CreateUserForm(UserCreationForm):
 	class Meta:
