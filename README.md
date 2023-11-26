@@ -50,31 +50,15 @@
   </p>
 </div>
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Mục lục</summary>
-  <ol>
-    <li>
-      <a href="#ý-tưởng">Ý tưởng</a>
-      <ul>
-        <li><a href="#công-nghệ-sử-dụng">Công nghệ sử dụng</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#bắt-đầu-sử-dụng">Bắt đầu sử dụng</a>
-      <ul>
-        <li><a href="#yêu-cầu-cài-đặt">Yêu cầu cài đặt</a></li>
-        <li><a href="#cài-đặt-project">Cài Đặt Project</a></li>
-      </ul>
-    </li>
-    <li><a href="#hướng-dẫn-sử-dụng">Hướng dẫn sử dụng</a></li>
-    <!-- <li><a href="#roadmap">Roadmap</a></li> -->
-    <li><a href="#đóng-góp">Đóng góp</a></li>
-    <!-- <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li> -->
-  </ol>
-</details>
+## Table of Contents
+
+- [Ý tưởng](#ý-tưởng)
+  - [Công nghệ sử dụng](#công-nghệ-sử-dụng)
+- [Bắt đầu sử dụng](#bắt-đầu-sử-dụng)
+  - [Yêu cầu cài đặt](#yêu-cầu-cài-đặt)
+  - [Cài Đặt Project](#cài-đặt-project)
+- [Hướng dẫn sử dụng](#hướng-dẫn-sử-dụng)
+- [Thành viên nhóm](#thành-viên-nhóm)
 
 <!-- ABOUT THE PROJECT -->
 
@@ -166,7 +150,7 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 4. Push lên branch chính (`git push main feature/AmazingFeature`)
 5. Mở pull request
 
-<p align="right">(<a href="#readme-top">TOP</a>)</p>
+<p align="right">(<a href="#readme-top">Lên đầu trang</a>)</p>
 
 <!-- LICENSE -->
 
@@ -201,7 +185,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 - [Lê Tuấn Đạt - 21520699](https://github.com/kamdaxay)
 - [Nguyễn Đức Hiển - 20521307](https://github.com/NguyenHien1307)
 - [Đoàn Bảo Long - 21520332](https://github.com/baolongvncom)
-<!-- * [Nguyễn Trần Sang Quang - 21522545](https://github.com/sangquangtryhard) -->
+- [Nguyễn Trần Sang Quang - 21522545](https://github.com/sangquangtryhard) 
 
 [contributors-shield]: https://img.shields.io/github/contributors/lamisgosu11/se104-final-website.svg?style=for-the-badge
 [contributors-url]: https://github.com/lamisgosu11/se104-final-website/graphs/contributors
