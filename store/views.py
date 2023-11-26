@@ -264,9 +264,9 @@ def registerPage(request):
         return render(request, 'auth/register.html', context)
 
 # logout page view xử lý yêu cầu của người dùng để đăng xuất
-# nhận đăng xuất -> chuyển hướng người dùng đến trang đăng nhập
+# nhận đăng xuất -> chuyển hướng người dùng đến trang chủ
 
 
 def logoutUser(request):
     logout(request)
-    return redirect('login')
+    return redirect('home')
