@@ -6,9 +6,9 @@
     </div>
     <ul>
         {% for choice in choices %}
-        <li{% if choice.selected %} class="text-success selected" {% endif %}>
-            <a href="{{ choice.query_string|iriencode }}" title="{{ choice.display }}">{{ choice.display }}</a>
+            <li{% if choice.selected %} class="text-success selected"{% endif %}>
+                <a href="{{ choice.query_string|iriencode }}" title="{{ choice.display }}">{{ choice.display }}</a>
             </li>
-            {% endfor %}
+        {% endfor %}
     </ul>
 </div>
