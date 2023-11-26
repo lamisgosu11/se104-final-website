@@ -92,3 +92,48 @@
                     <div class="banner__item banner__item--middle">
                         <div class="banner__item__pic">
                             <img src="{% static 'images/home/banner/banner-2.jpg' %}" alt="">
+                        </div>
+                        <div class="banner__item__text">
+                            <h2>Accessories</h2>
+                            <a href="{% url 'store' %}">Shop now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="banner__item banner__item--last">
+                        <div class="banner__item__pic">
+                            <img src="{% static 'images/home/banner/banner-3.jpg' %}" alt="">
+                        </div>
+                        <div class="banner__item__text">
+                            <h2>Shoes Spring 2023</h2>
+                            <a href="{% url 'store' %}">Shop now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner Section End -->
+
+    <!-- Product Section Begin -->
+    <section class="product spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="filter__controls">
+                        <li class="active" data-filter="*">Best Sellers</li>
+                        <li data-filter=".new-arrivals">New Arrivals</li>
+                        <li data-filter=".hot-sales">Hot Sales</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row product__filter">
+                    {% for product in products %}
+                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="{{product.imageURL}}">
+                            <ul class="product__hover">
+                                <li><a href="#"><img src="{% static 'images/home/icon/heart.png' %}" alt=""></a></li>
+                                <li><a href="#"><img src="{% static 'images/home/icon/compare.png' %}" alt=""> <span>Compare</span></a></li>
+                                <li><a href="#"><img src="{% static 'images/home/icon/search.png' %}" alt=""></a></li>
+                            </ul>

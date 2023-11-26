@@ -1,0 +1,130 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="keywords" content="JEANS,FASHION">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PRADO</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css">
+
+ </head> 
+ <body>  
+
+    <!-- Blog Details Hero Begin -->
+    <section class="blog-hero spad">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-9 text-center">
+                    <div class="blog__hero__text">
+                        <h2>{{post.title}}</h2>
+                        <ul>
+                            <li>By Deercreative</li>
+                            <li>February 21, 2019</li>
+                            <li>8 Comments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Details Hero End -->
+
+    <!-- Blog Details Section Begin -->
+    <section class="blog-details spad">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-12">
+                    <div class="blog__details__pic">
+                        <img src={{post.imageURL}} alt="">
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="blog__details__content">
+                       
+                        <div class="blog__details__text">
+                            <p>{{post.description}}</p>
+                        </div>
+                        <div class="blog__details__quote">
+                            <i class="fa fa-quote-left"></i>
+                            <p>“When designing an advertisement for a particular product many things should be
+                                researched like where it should be displayed.”</p>
+                            <h6>_ John Smith _</h6>
+                        </div>
+                        
+                        
+                        <div class="blog__details__btns">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <a href="" class="blog__details__btns__item">
+                                        <p><span class="arrow_left"></span> Previous Pod</p>
+                                        <h5>It S Classified How To Utilize Free Classified Ad Sites</h5>
+                                    </a>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <a href="" class="blog__details__btns__item blog__details__btns__item--next">
+                                        <p>Next Pod <span class="arrow_right"></span></p>
+                                        <h5>Tips For Choosing The Perfect Gloss For Your Lips</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                         {% if not post.comments.all %}
+                         No comments yet ..
+                         {% else %}
+                        <div class="blog__details__comment">
+                            <h4>Leave A Comment</h4>
+                            <form action="blog_article" method="post">
+                                {% csrf_token %}
+                                {{ form }}
+                                <div class="row">
+                            
+                                    <div class="col-lg-12 text-center">
+                                        <input id="body" type="text" name="body" value="{{ current_name }}">
+                                        <button type="submit" class="site-btn">Post Comment</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        {% for comment in post.comments.all %}
+                        {{comment.body}}
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Details Section End -->
+    
+    <!-- Js Plugins -->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nicescroll.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'js/mixitup.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+    </body>
+    
+{% endblock content %}
