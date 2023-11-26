@@ -6,7 +6,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('store','0008_alter_order_customer_alter_shippingaddress_customer'),
+        ('store', '0008_alter_order_customer_alter_shippingaddress_customer'),
     ]
 
     operations = [
@@ -18,6 +18,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='shippingaddress',
             name='customer',
-            field=models.ForeignKey(blank=True, null= True, on_delete=django.db.models.deletion.SET_NULL, related_name='address' to=settings.AUTH_USER_MODEL),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='address', to=settings.AUTH_USER_MODEL),
         ),
     ]
