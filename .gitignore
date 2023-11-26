@@ -2,3 +2,6 @@
 *.sqlite3
 debug.log
 /store_dj/settings.py
+
+#ignore python env
+env/
