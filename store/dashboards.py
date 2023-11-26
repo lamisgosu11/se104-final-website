@@ -24,7 +24,7 @@ from django.contrib.auth.models import User
 #Lớp biểu đồ đường đơn cho biểu đồ tuần cho đơn đặt hàng
 class OrderWeekSingleLineChart(widgets.SingleLineChart):
     limit_to = 7 #giới hạn biểu đồ cho 7 ngày
-    title = 'Commandes de Cette Semaine' #tiêu đề biểu đồ
+    title = 'This Week Orders' #tiêu đề biểu đồ
     model = Order #mô hình dữ liệu được sử dụng, ở đây là Order
     width = widgets.LARGEST # Độ rộng của biểu đồ
     
@@ -144,7 +144,7 @@ class OrderMonthSingleLineChart(widgets.SingleLineChart):
 #Lớp biểu đồ đường đơn cho biểu đồ năm cho đơn đặt hàng
 class OrderYearSingleLineChart(widgets.SingleLineChart):
     limit_to = 12 #giới hạng biểu đồ cho 12 tháng
-    title = 'Commandes de Cette Année' #tiêu đồ của biểu đồ
+    title = 'This Year Orders' #tiêu đồ của biểu đồ
     model = Order #mô hình dữ liệu được sử dụng, ở đây là Order
     width = widgets.LARGEST # Độ rộng của biểu đồ
     
@@ -203,7 +203,7 @@ class OrderYearSingleLineChart(widgets.SingleLineChart):
 #tạo biểu đồ tròn để hiển thị số lượng bình luận cho mỗi bài viết
 class PostPieChart(widgets.SinglePieChart):
     limit_to = 2 #Giới hạn số lượng bài viết và bình luận (comments)
-    title = 'Les Articles Les Plus Commentés' #Tiêu đề của biểu đồ
+    title = 'Most Commented Articles' #Tiêu đề của biểu đồ
     model = Comment #Mô hình dữ liệu là Comment
     width = widgets.LARGE #Độ rộng của biểu đồ
 
@@ -238,7 +238,7 @@ class PostPieChart(widgets.SinglePieChart):
 
 #Hiển thị danh sách địa chỉ vận chuyển và thông tin liên quan
 class UsersList(widgets.ItemList):
-    title = 'Clients et Addresses' #Tiêu đề của danh sách
+    title = 'Customers and Addresses' #Tiêu đề của danh sách
     model = ShippingAddress #Mô hình dữ liệu là ShippingAddress
     queryset = ShippingAddress.objects.all() #Truy vấn cơ sở dữ liệu để lấy danh sách địa chỉ vận chuyển
     list_display = ['customer','city', 'address'] # Các trường cần hiển thị trong danh sách
