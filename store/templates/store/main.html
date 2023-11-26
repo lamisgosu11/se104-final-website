@@ -77,7 +77,7 @@ var csrftoken = getToken('csrftoken');
                     <nav class="header__menu mobile-menu">
                         <ul>
                             <li><a href="{% url 'home' %}">Home</a></li>
-                            <li><a href="{% url 'store' %}">Store</a></li>
+                            <li><a href="{% url 'store' %}">Store</a></li>it 
                             <li><a href="{% url 'blog' %}">Blog</a></li>
                             <li><a href="{% url 'contact' %}">Contact</a></li>
                         </ul>
@@ -96,7 +96,9 @@ var csrftoken = getToken('csrftoken');
                     <a href="{% url 'cart' %}">
                      <img  id="cart-icon" src="{% static 'images/cart.png' %}">
                     </a>
-                     <p id="cart-total">{{cartItems}}</p> 
+                    {% if cartItems != 0 %}
+                        <p id="cart-total">{{cartItems}}</p>
+                    {% endif %}
 
                     </div>
                 </div>
