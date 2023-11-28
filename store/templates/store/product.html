@@ -37,8 +37,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product__details__breadcrumb">
-                            <a href="{% url 'home' %}">Home> </a>
-                            <a href="{% url 'store' %}">Shop> </a>
+                            <a href="{% url 'home' %}">Home </a>
+                            <a href="{% url 'store' %}">Shop </a>
                             <span>Product Details</span>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                             <!-- <p>Coat with quilted lining and an adjustable hood. Featuring long sleeves with adjustable
                                 cuff tabs, adjustable asymmetric hem with elastic side tabs and a front zip fastening
                             with placket.</p> -->
-                            <div class="product__details__option">
+                            <!-- <div class="product__details__option">
                                 <div class="product__details__option__size">
                                     <span>Size:</span>
                                     <label for="xxl">xxl
@@ -120,14 +120,14 @@
                                         <input type="radio" id="sp-9">
                                     </label>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="product__details__cart__option">
                                 <div class="quantity">
                                     <div class="pro-qty">
                                         <input type="text" value="1">
                                     </div>
                                 </div>
-                                <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart ">Add to Cart</button>
+                                <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
                             </div>
                            
                            
@@ -323,6 +323,17 @@
     <script src="{% static 'js/mixitup.min.js' %}"></script>
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
+    <!-- custom scripts -->
+    <script>
+        document.querySelector('.update-cart').addEventListener('click', function() {
+            var productId = this.getAttribute('data-product');
+            var action = this.getAttribute('data-action');
+            var quantity = document.querySelector('#quantity').value;
+        
+            console.log('Product:', productId, 'Action:', action, 'Quantity:', quantity);
+            // Now you can send productId, action, and quantity to your server
+        });
+    </script>
 
     </body>
     

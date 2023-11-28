@@ -311,3 +311,10 @@ def registerPage(request):
 def logoutUser(request):
     logout(request)
     return redirect('home')
+
+
+def add_to_cart(request):
+    if request.method == 'POST':
+        product_id = request.POST['product_id']
+        quantity = request.POST['quantity']
+        # Now you can add the product to the cart

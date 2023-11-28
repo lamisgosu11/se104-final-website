@@ -7,7 +7,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser
 from django.dispatch import receiver 
 from django.db.models.signals import post_save
-
+# adding new imports
+from django.core.validators import MinValueValidator
+from django.core.exceptions import ValidationError
 # Class customer is created to extend the User model
 # Attributes user are inherited by the User model
 # Contain the name and email of the user
@@ -24,13 +26,18 @@ class Customer(models.Model):
 # Metod imageURL is to get the image of the product
 class Product(models.Model):
     name=models.CharField(max_length=200,null=True)   
-    price=models.DecimalField(max_digits=7,decimal_places=2) 
+    price=models.DecimalField(max_digits=7,decimal_places=2,validators=[MinValueValidator(0.01)]) 
     slug=models.SlugField(max_length=200,default="")
     category=models.CharField(max_length=200,null=True) 
     digital=models.BooleanField(default=False,null=True,blank=True)
     image= models.ImageField(null=True,blank=True)
-    stock = models.IntegerField(null=True, blank=True)
-    stock_limit = models.IntegerField(null=True, blank=True)
+    stock = models.IntegerField(null=True, blank=True, validators=[MinValueValidator(0)])
+    stock_limit = models.IntegerField(null=True, blank=True, validators=[MinValueValidator(1)])
+
+    def save(self, *args, **kwargs):
+        if self.stock >= self.stock_limit:
+            raise ValidationError("Stock must be lower than stock limit")
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
@@ -86,7 +93,7 @@ class Order(models.Model):
 class OrderItem (models.Model):
     product = models.ForeignKey(Product,on_delete=models.SET_NULL,null=True,blank=True)
     order = models.ForeignKey(Order,on_delete=models.SET_NULL,null=True,blank=True)
-    quantity = models.IntegerField(default=0,null=True,blank=True)
+    quantity = models.IntegerField(default=0,null=True,blank=True, validators=[MinValueValidator(0)])
     date_added = models.DateTimeField(auto_now_add=True)
     
     @property
