@@ -84,7 +84,7 @@ class OrderWeekSingleLineChart(widgets.SingleLineChart):
 #Lớp biểu đồ đường đơn cho biểu đồ tháng cho đơn đặt hàng
 class OrderMonthSingleLineChart(widgets.SingleLineChart):
     limit_to = 30 #giới hạn biểu đồ cho 30 ngày
-    title = 'Commandes des Derniers 30 Jours' #tiêu đề biểu đồ
+    title = 'Orders from the Last 30 Days' #tiêu đề biểu đồ
     model = Order #mô hình dữ liệu được sử dụng, ở đây là Order
     width = widgets.LARGEST # Độ rộng của biểu đồ
 
