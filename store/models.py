@@ -13,6 +13,11 @@ from django.core.exceptions import ValidationError
 # Class customer is created to extend the User model
 # Attributes user are inherited by the User model
 # Contain the name and email of the user
+# custom imports
+from django.shortcuts import render, redirect
+from django.contrib import messages
+# from .models import Product
+
 class Customer(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE, null=True,blank=True, related_name = "customer")
     name=models.CharField(max_length=200,null=True)    
@@ -85,6 +90,19 @@ class Order(models.Model):
             if i.product.digital == False:
                 shipping=True
             return shipping
+        
+    def save(self, *args, **kwargs):
+        if self.complete:
+            order_items = self.orderitem_set.all()
+            for item in order_items:
+                if item.product is not None:
+                    if item.quantity > item.product.stock:
+                        raise ValidationError("Order quantity cannot be greater than stock")
+                    if item.product.stock - item.quantity < 0:
+                        raise ValidationError("Stock cannot be negative")
+                    item.product.stock -= item.quantity
+                    item.product.save()
+        super().save(*args, **kwargs)
 
 
 # Class OrderItem is created to detailed the order
@@ -98,8 +116,17 @@ class OrderItem (models.Model):
     
     @property
     def get_total(self):
-        total = self.product.price * self.quantity
-        return total
+        if self.product is not None:
+            total = self.product.price * self.quantity
+            return total
+        return 0
+    
+    def save(self, *args, **kwargs):
+        if self.product is not None:
+            if self.product.stock - self.quantity < 0:
+                raise ValidationError("quantity must lower than stock")
+            self.product.save()
+        super().save(*args, **kwargs)
 
 
 
@@ -159,3 +186,4 @@ def create_user_customer(sender, instance, created, **kwargs):
 	print('****', created)
 	if instance.is_staff == False:
 		Customer.objects.get_or_create(user = instance, name = instance.username, email = instance.email)
+

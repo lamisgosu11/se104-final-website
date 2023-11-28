@@ -22,6 +22,7 @@ from django.conf import settings
 from controlcenter.views import controlcenter
 from admin_notification.views import check_notification_view
 
+
 urlpatterns = [
     path('check/notification', check_notification_view, name="check_notifications"),
     path('admin/', admin.site.urls),
