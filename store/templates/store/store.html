@@ -20,7 +20,7 @@
             <h3 class="product-title">{{product.name}}</h3>
             <strong class="product-price">${{product.price|floatformat:2}}</strong>
             <br>
-            <a href="{% url 'product' product.slug %}" class="btn btn-outline-secondary"> Voir </a>
+            <a href="{% url 'product' product.slug %}" class="btn btn-outline-secondary"> View </a>
             </button>
             <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart ">Add to Cart</button>
 
