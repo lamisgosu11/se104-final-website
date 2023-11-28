@@ -3365,6 +3365,25 @@ ol {
 	padding: 14px 35px;
 }
 
+.contact_shields
+{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.contact_shields a {
+	display: inline-block;
+	font-size: 18px;
+	color: #111111;
+	width: 50px;
+	height: 50px;
+	background: #f2f2f2;
+	border-radius: 50%;
+	line-height: 50px;
+	text-align: center;
+	margin-right: 6px;
+
+}
+
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 
 @media only screen and (min-width: 1200px) {
