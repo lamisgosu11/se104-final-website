@@ -5,3 +5,6 @@ debug.log
 
 #ignore python env
 env/
+
+#ignore storing images from local server 
+/static/images/
