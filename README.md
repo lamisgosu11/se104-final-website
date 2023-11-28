@@ -20,9 +20,9 @@
 -->
 <div align="center">
   
-  [![Contributors][contributors-shield]][contributors-url]
-  [![Forks][forks-shield]][forks-url]
   [![Stargazers][stars-shield]][stars-url]
+  [![Forks][forks-shield]][forks-url]
+  [![Contributors][contributors-shield]][contributors-url]
   [![Issues][issues-shield]][issues-url]
   [![License][license-shield]][license-url]
   
@@ -31,9 +31,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <!-- <a href="https://github.com/lamisgosu11/se104-final-website">
-    <img src="md-images/logo.png" alt="Logo" width="80" height="80">
-  </a> -->
+  <a href="https://github.com/lamisgosu11/se104-final-website">
+    <img src="https://i.kym-cdn.com/entries/icons/original/000/047/264/josh_hutcherson_whistle.jpg" alt="Logo" width="80" height="80">
+  </a>
 <h3 align="center">Website bán hàng cá nhân (quần áo) </h3>
 
   <p align="center">
