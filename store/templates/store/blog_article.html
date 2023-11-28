@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
     <meta name="keywords" content="JEANS,FASHION">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>S7ORE</title>
+    <title></title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
@@ -34,9 +34,9 @@
                     <div class="blog__hero__text">
                         <h2>{{post.title}}</h2>
                         <ul>
-                            <li>By Deercreative</li>
-                            <li>February 21, 2019</li>
-                            <li>8 Comments</li>
+                            <!-- <li>By Deercreative</li> -->
+                            <li>{{post.date_posted|date}}</li>
+                            <!-- <li>8 Comments</li> -->
                         </ul>
                     </div>
                 </div>
@@ -60,15 +60,15 @@
                         <div class="blog__details__text">
                             <p>{{post.description}}</p>
                         </div>
-                        <div class="blog__details__quote">
+                        <!-- <div class="blog__details__quote">
                             <i class="fa fa-quote-left"></i>
                             <p>“When designing an advertisement for a particular product many things should be
                                 researched like where it should be displayed.”</p>
                             <h6>_ John Smith _</h6>
-                        </div>
+                        </div> -->
                         
                         
-                        <div class="blog__details__btns">
+                        <!-- <div class="blog__details__btns">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <a href="" class="blog__details__btns__item">
@@ -83,7 +83,7 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                          {% if not post.comments.all %}
                          No comments yet ..
                          {% else %}
