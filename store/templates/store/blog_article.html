@@ -87,7 +87,26 @@
                          {% if not post.comments.all %}
                          No comments yet ..
                          {% else %}
-                        <div class="blog__details__comment">
+                         <!-- print comments -->
+                            {% for comment in post.comments.all %}
+                            <div class="blog__details__comment">
+                                <h4>Comments</h4>
+                                <ul>
+                                    <li>
+                                        <div class="comment__item__text">
+                                            <h5>{{comment.name}} </h5>
+                                            <p>{{comment.body}}</p>
+                                                <!-- add a line horizontal -->
+                                            <h5>
+                                                <span>{{comment.date_commented|date}}</span>
+                                            </h7>
+                                            <hr>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>  
+                            {% endfor %}
+                        <!-- <div class="blog__details__comment">
                             <h4>Leave A Comment</h4>
                             <form action="blog_article" method="post">
                                 {% csrf_token %}
@@ -99,11 +118,7 @@
                                     </div>
                                 </div>
                             </form>
-                        </div>
-                        
-                        {% for comment in post.comments.all %}
-                        {{comment.body}}
-                        {% endfor %}
+                        </div> -->
                         {% endif %}
                     </div>
                 </div>
