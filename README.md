@@ -195,9 +195,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [stars-url]: https://github.com/lamisgosu11/se104-final-website/stargazers
 [issues-shield]: https://img.shields.io/github/issues/lamisgosu11/se104-final-website.svg?style=for-the-badge
 [issues-url]: https://github.com/github_username/repo_name/issues
-
-<!-- [license-shield]: https://img.shields.io/github/license/lamisgosu11/se104-final-website.svg?style=for-the-badge -->
-
+[license-shield]: https://img.shields.io/github/license/lamisgosu11/se104-final-website.svg?style=for-the-badge
 [license-url]: https://github.com/lamisgosu11/se104-final-website/blob/main/LICENSE
 [product-screenshot]: md-images/screenshot.png
 [Django]: https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white
