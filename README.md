@@ -198,7 +198,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- [license-shield]: https://img.shields.io/github/license/lamisgosu11/se104-final-website.svg?style=for-the-badge -->
 
-[license-url]: https://github.com/lamisgosu11/se104-final-website/blob/master/LICENSE.txt
+[license-url]: https://github.com/lamisgosu11/se104-final-website/blob/master/LICENSE
 [product-screenshot]: md-images/screenshot.png
 [Django]: https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white
 [SQLITE]: https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white
