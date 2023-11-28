@@ -88,9 +88,9 @@
                          No comments yet ..
                          {% else %}
                          <!-- print comments -->
+                         <div class="blog__details__comment">
+                            <h4>Comments</h4>
                             {% for comment in post.comments.all %}
-                            <div class="blog__details__comment">
-                                <h4>Comments</h4>
                                 <ul>
                                     <li>
                                         <div class="comment__item__text">
