@@ -69,11 +69,20 @@ def home(request):
 
 
 def product(request, slug):
-    # te3 product detaillé
+    if request.user.is_authenticated:
+        customer = request.user
+        order, created = Order.objects.get_or_create(
+            customer=customer, complete=False)
+        items = order.orderitem_set.all()
+        cartItems = order.get_cart_items
+    else:
+        items = []
+        order = {'get_cart_items': 0, 'get_cart_total': 0, 'shipping': False}
+        cartItems = order['get_cart_items']
     print('Product slug', slug)
     product = get_object_or_404(Product, slug=slug)
     related_products = Product.objects.filter(category=product.category)[:4]
-    context = {'product': product, 'related_products': related_products}
+    context = {'product': product, 'related_products': related_products, 'cartItems': cartItems}
     return render(request, 'store/product.html', context)
 
 # blog_article view xử lý yêu cầu của người dùng để xem chi tiết bài viết
@@ -83,6 +92,16 @@ def product(request, slug):
 
 
 def blog_article(request, slug):
+    if request.user.is_authenticated:
+        customer = request.user
+        order, created = Order.objects.get_or_create(
+            customer=customer, complete=False)
+        items = order.orderitem_set.all()
+        cartItems = order.get_cart_items
+    else:
+        items = []
+        order = {'get_cart_items': 0, 'get_cart_total': 0, 'shipping': False}
+        cartItems = order['get_cart_items']
     print('post slug', slug)
     post = get_object_or_404(Post, slug=slug)
     form = CommentForm(request.POST, instance=post)
@@ -96,22 +115,44 @@ def blog_article(request, slug):
         else:
             print('form is invalid')
 
-    context = {'post': post, 'form': form}
+    context = {'post': post, 'form': form, 'cartItems': cartItems}
     return render(request, 'store/blog_article.html', context)
 
 # blog view trả về một trang HTML với tất cả các bài viết
 
 
 def blog(request):
+    if request.user.is_authenticated:
+        customer = request.user
+        order, created = Order.objects.get_or_create(
+            customer=customer, complete=False)
+        items = order.orderitem_set.all()
+        cartItems = order.get_cart_items
+    else:
+        items = []
+        order = {'get_cart_items': 0, 'get_cart_total': 0, 'shipping': False}
+        cartItems = order['get_cart_items']
     posts = Post.objects.all()
-    context = {'posts': posts}
+    context = {'posts': posts, 'cartItems': cartItems}
     return render(request, 'store/blog.html', context)
 
 # contact view trả về một trang HTML với thông tin liên hệ
 
 
 def contact(request):
-    return render(request, 'store/contact.html')
+    if request.user.is_authenticated:
+        customer = request.user
+        order, created = Order.objects.get_or_create(
+            customer=customer, complete=False)
+        items = order.orderitem_set.all()
+        cartItems = order.get_cart_items
+    else:
+        items = []
+        order = {'get_cart_items': 0, 'get_cart_total': 0, 'shipping': False}
+        cartItems = order['get_cart_items']   
+    context = {'cartItems': cartItems}
+    # return render(request, 'store/contact.html')
+    return render(request, 'store/contact.html', context)
 
 # cart view trả về một trang HTML với thông tin về các sản phẩm trong giỏ hàng (mặt hàng, đơn hàng, số lượng)
 
