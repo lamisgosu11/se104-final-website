@@ -122,12 +122,9 @@
                                 </div>
                             </div> -->
                             <div class="product__details__cart__option">
-                                <div class="quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" value="1">
-                                    </div>
-                                </div>
-                                <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                                <a href="#" class="primary-btn">
+                                    <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                                </a>
                             </div>
                            
                            
@@ -270,41 +267,23 @@
             <div class="row">
                 {% for related in related_products %}
                 <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
+                    <h7>${{related.name}}</h7>
+                    <h5>{{related.price}}</h5>
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="{{related.imageURL}}">
                             <span class="label">New</span>
-                            <ul class="product__hover">
-                                <li><a href="#"><img src="{% static 'images/home/icon/heart.png'%}" alt=""></a></li>
-                                <li><a href="#"><img src="{% static 'images/home/icon/compare.png'%}" alt=""> <span>Compare</span></a></li>
-                                <li><a href="#"><img src="{% static 'images/home/icon/search.png'%}" alt=""></a></li>
-                            </ul>
                         </div>
                         <div class="product__item__text">
-                            <h6>{{related.title}}</h6>
-                            <a href="#" class="add-cart">+ Add To Cart</a>
-                            <div class="rating">
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                            </div>
-                            <h5>$67.24</h5>
-                            <div class="product__color__select">
-                                <label for="pc-1">
-                                    <input type="radio" id="pc-1">
-                                </label>
-                                <label class="active black" for="pc-2">
-                                    <input type="radio" id="pc-2">
-                                </label>
-                                <label class="grey" for="pc-3">
-                                    <input type="radio" id="pc-3">
-                                </label>
-                            </div>
+                            <!-- <h6>{{related.title}}</h6> -->
+                            <button data-product="{{related.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                            <a href="{% url 'product' related.slug %}" class="btn btn-outline-secondary add-btn update-cart"> View 
+
+                            </a>
+                            <br>
+                            <br>
                         </div>
                     </div>
                 </div>
-               
             {% endfor %}    
                 
             </div>

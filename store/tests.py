@@ -6,6 +6,9 @@ from django.test import TestCase
 class UserLoginTestCase(TestCase):
 
     def setUp(self):
+        # create a user
+        User.objects.create_user(username='test', password='test')
+            
         ...
         
     def tearDown(self):
