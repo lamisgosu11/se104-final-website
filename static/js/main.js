@@ -21,6 +21,7 @@
         /*------------------
             Gallery filter
         --------------------*/
+        // Handle click events for the gallery filter controls
         $('.filter__controls li').on('click', function () {
             $('.filter__controls li').removeClass('active');
             $(this).addClass('active');
@@ -34,6 +35,8 @@
     /*------------------
         Background Set
     --------------------*/
+    // Set background images for elements with the 'set-bg' class
+
     $('.set-bg').each(function () {
         var bg = $(this).data('setbg');
         $(this).css('background-image', 'url(' + bg + ')');
@@ -53,6 +56,7 @@
     /*------------------
 		Navigation
 	--------------------*/
+    // Initialize mobile menu using slicknav plugin
     $(".mobile-menu").slicknav({
         prependTo: '#mobile-menu-wrap',
         allowParentLinks: true
@@ -61,6 +65,7 @@
     /*------------------
         Accordin Active
     --------------------*/
+    // Add 'active' class to accordion items on show and remove on hide
     $('.collapse').on('shown.bs.collapse', function () {
         $(this).prev().addClass('active');
     });
@@ -83,6 +88,7 @@
     /*-----------------------
         Hero Slider
     ------------------------*/
+    // Initialize Owl Carousel for the hero slider
     $(".hero__slider").owlCarousel({
         loop: true,
         margin: 0,
@@ -100,11 +106,14 @@
     /*--------------------------
         Select
     ----------------------------*/
+    // Customize select elements using the niceSelect plugin
     $("select").niceSelect();
 
     /*-------------------
 		Radio Btn
 	--------------------- */
+    // Handle click events for radio buttons in color, size, and option selectors
+
     $(".product__color__select label, .shop__sidebar__size label, .product__details__option__size label").on('click', function () {
         $(".product__color__select label, .shop__sidebar__size label, .product__details__option__size label").removeClass('active');
         $(this).addClass('active');
