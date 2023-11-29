@@ -21,6 +21,7 @@
         /*------------------
             Gallery filter
         --------------------*/
+        // Handle click events for the gallery filter controls
         $('.filter__controls li').on('click', function () {
             $('.filter__controls li').removeClass('active');
             $(this).addClass('active');
@@ -34,6 +35,8 @@
     /*------------------
         Background Set
     --------------------*/
+    // Set background images for elements with the 'set-bg' class
+
     $('.set-bg').each(function () {
         var bg = $(this).data('setbg');
         $(this).css('background-image', 'url(' + bg + ')');
@@ -53,6 +56,7 @@
     /*------------------
 		Navigation
 	--------------------*/
+    // Initialize mobile menu using slicknav plugin
     $(".mobile-menu").slicknav({
         prependTo: '#mobile-menu-wrap',
         allowParentLinks: true
