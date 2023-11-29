@@ -65,6 +65,7 @@
     /*------------------
         Accordin Active
     --------------------*/
+    // Add 'active' class to accordion items on show and remove on hide
     $('.collapse').on('shown.bs.collapse', function () {
         $(this).prev().addClass('active');
     });
@@ -87,6 +88,7 @@
     /*-----------------------
         Hero Slider
     ------------------------*/
+    // Initialize Owl Carousel for the hero slider
     $(".hero__slider").owlCarousel({
         loop: true,
         margin: 0,
@@ -104,11 +106,14 @@
     /*--------------------------
         Select
     ----------------------------*/
+    // Customize select elements using the niceSelect plugin
     $("select").niceSelect();
 
     /*-------------------
 		Radio Btn
 	--------------------- */
+    // Handle click events for radio buttons in color, size, and option selectors
+
     $(".product__color__select label, .shop__sidebar__size label, .product__details__option__size label").on('click', function () {
         $(".product__color__select label, .shop__sidebar__size label, .product__details__option__size label").removeClass('active');
         $(this).addClass('active');
