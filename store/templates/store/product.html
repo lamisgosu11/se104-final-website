@@ -260,12 +260,13 @@
     <section class="related spad">
         <div class="container">
             <div class="row">
+                <hr>
                 <div class="col-lg-12">
                     <h3 class="related-title">Related Product</h3>
                 </div>
             </div>
             <div class="row">
-                <hr>
+                <!-- <hr> -->
                 {% for related in related_products %}
                 <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
                     <h4 style="font-weight: bold;"><a href="{% url 'product' related.slug %}" style="color: #333; text-decoration: none;">{{related.name}}</a></h4>
