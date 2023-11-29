@@ -267,17 +267,16 @@
             <div class="row">
                 {% for related in related_products %}
                 <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
-                    <h7>${{related.name}}</h7>
-                    <h5>{{related.price}}</h5>
+                    <h4 style="font-weight: bold">{{related.name}}</h4>
+                    <h5>${{related.price}}</h5>
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="{{related.imageURL}}">
                             <span class="label">New</span>
                         </div>
                         <div class="product__item__text">
-                            <!-- <h6>{{related.title}}</h6> -->
-                            <button data-product="{{related.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-                            <a href="{% url 'product' related.slug %}" class="btn btn-outline-secondary add-btn update-cart"> View 
-
+                            <h6>{{related.title}}</h6>
+                            <a href="{% url 'product' related.slug %}" class="btn btn-outline-secondary add-btn update-cart"> 
+                                <h5>View</h5>
                             </a>
                             <br>
                             <br>
