@@ -105,7 +105,7 @@ viết đại cái gì vô đây nè
    ```shell
    pip install -r requirements.txt
    ```
-3. Sử dụng Ngrok để tạo đường dẫn tạm thời cho project:
+3. Sử dụng Ngrok để tạo tunnel tạm thời cho localhost tới với internet:
    ```shell
     ngrok http 8000
    ```
@@ -119,6 +119,16 @@ Chạy project, tạo file settings.py và chỉnh lại config nếu muốn dep
 
 ```shell
  python manage.py runserver
+```
+Tạo super-user
+
+```shell
+ python manage.py superuser
+```
+Migrate database
+
+```shell
+ python manage.py migrate
 ```
 
 <!-- bổ sung thêm sau -->
