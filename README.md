@@ -57,6 +57,7 @@
   - [Yêu cầu cài đặt](#yêu-cầu-cài-đặt)
   - [Cài Đặt Project](#cài-đặt-project)
 - [Hướng dẫn sử dụng](#hướng-dẫn-sử-dụng)
+- [Đóng góp](#đóng-góp)
 - [Thành viên nhóm](#thành-viên-nhóm)
 
 <!-- ABOUT THE PROJECT -->
