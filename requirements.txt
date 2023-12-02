@@ -3,3 +3,4 @@ ordereddict==1.1
 six==1.16.0
 pillow
 django-controlcenter
+django-cors-headers
