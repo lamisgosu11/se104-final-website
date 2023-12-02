@@ -51,8 +51,8 @@
 
 ## Table of Contents
 
-- [Ý tưởng](#ý-tưởng)
-  - [Công nghệ sử dụng](#công-nghệ-sử-dụng)
+<!-- [Ý tưởng](#ý-tưởng) -->
+- [Công nghệ sử dụng](#công-nghệ-sử-dụng)
 - [Bắt đầu sử dụng](#bắt-đầu-sử-dụng)
   - [Yêu cầu cài đặt](#yêu-cầu-cài-đặt)
   - [Cài Đặt Project](#cài-đặt-project)
@@ -61,17 +61,17 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## Ý tưởng
+<!--## Ý tưởng
 
-<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
+<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) 
 
-<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
+<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) 
 
 viết đại cái gì vô đây nè
 
-<p align="right">(<a href="#readme-top">Lên đầu trang</a>)</p>
+<p align="right">(<a href="#readme-top">Lên đầu trang</a>)</p> -->
 
-### Công nghệ sử dụng
+## Công nghệ sử dụng
 
 <!-- - [![Flutter][flutter]][flutter-url]
 - [![Firebase][firebase]][firebase-url] -->
