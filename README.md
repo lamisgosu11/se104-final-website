@@ -123,7 +123,7 @@ Chạy project, tạo file settings.py và chỉnh lại config nếu muốn dep
 Tạo super-user
 
 ```shell
- python manage.py superuser
+ python manage.py createsuperuser
 ```
 Migrate database
 
